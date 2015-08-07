@@ -31,8 +31,8 @@
             {% if contacts is not empty %}
                 <h1>Here are your Contacts!</h1>
                 {% for contact in contacts %}
+                    <h4>{{contact.getName}}</h4>
                     <ul>
-                        <li>{{contact.getName}}</li>
                         <li>{{contact.getNumber}}</li>
                         <li>{{contact.getAddress}}</li>
                     </ul>
