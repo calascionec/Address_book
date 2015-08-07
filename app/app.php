@@ -23,11 +23,11 @@
 
 //set the root route
 
-    $app->get('/', function use ($app) {
+    $app->get('/', function() use ($app) {
 
-        return $app['twig']->redner('address_book.html.twig', array('contacts' => Contact::getAll()));
+        return $app['twig']->render('address_book.html.twig', array('contacts' => Contact::getAll()));
     });
 
 
-
+    return $app;
  ?>
