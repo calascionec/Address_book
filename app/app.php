@@ -28,6 +28,23 @@
         return $app['twig']->render('address_book.html.twig', array('contacts' => Contact::getAll()));
     });
 
+/* takes information from the form on the root route, creates a new contact, tells it to save itself the the $_SESSION['list_of_contacts'] array, takes user to confirmation page*/
+
+    $app->post("/create_contact", function() use ($app) {
+        $contact = new Contact($_POST['name'], $_POST['number'], $_POST['address']);
+        $contact->save();
+
+        return $app['twig']->render('create_contact.html.twig', array('newcontact' => $contact));
+    });
+
+
+//deletes all contacts from $_SESSION['list_of_contacts'], takes user to confirmation page
+
+    $app->post("/delete_contacts", function() use ($app) {
+        Contact::deleteAll();
+
+        return $app['twig']->render('delete_contacts.html.twig');
+    });
 
     return $app;
  ?>

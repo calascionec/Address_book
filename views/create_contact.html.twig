@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <title>You greated a new Contact!</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Hey! You created a new Contact!</h1>
+
+            <h3>{{newcontact.getName}}</h3>
+            <ul>
+                <li>Number: {{newcontact.getNumber}}</li>
+                <li>Address: {{newcontact.getAddress}}</li>
+            </ul>
+
+            <a href="/"><button class="btn btn-default">Address Book</button></a>
+        </div>
+    </body>
+</html>
